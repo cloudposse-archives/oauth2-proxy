@@ -13,6 +13,7 @@ install:
 - make init
 - make docker:login
 
+
 script:
 - make docker:build ARGS="GITHUB_TOKEN"
 
