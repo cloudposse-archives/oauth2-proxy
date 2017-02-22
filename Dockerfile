@@ -9,6 +9,10 @@ ADD Makefile /
 
 RUN set -ex \
     && apk update \
+    && apk add ca-certificates 
+
+RUN set -ex \
+    && apk update \
     && apk add --no-cache --virtual .build-deps \
             bash \
 						curl \
@@ -33,6 +37,6 @@ RUN set -ex \
     && ls -l / \
     && apk del .build-deps
 
-EXPOSE 80 443
+EXPOSE 4180 443
 
 ENTRYPOINT ["/bin/oauth2_proxy"]
