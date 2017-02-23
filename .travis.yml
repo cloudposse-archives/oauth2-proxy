@@ -1,0 +1,21 @@
+sudo: required
+addons:
+  apt:
+    packages:
+    - git
+    - make
+    - curl
+env:
+- DOCKER_IMAGE_NAME=cloudposse/oauth2-proxy
+services:
+- docker
+install:
+- make init
+- make docker:login
+
+
+script:
+- make docker:build ARGS="GITHUB_TOKEN"
+
+after_success:
+- make travis:docker-tag-and-push
