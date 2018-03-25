@@ -20,7 +20,7 @@ RUN set -ex \
         make \
         jq \
     && make init \
-    && make github:download-release \
+    && make github/download-public-release \
         FILE=$BASE_NAME.tar.gz \
         OUTPUT=oauth2-proxy.tar.gz \
         VERSION=v$VERSION \
