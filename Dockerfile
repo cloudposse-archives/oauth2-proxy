@@ -1,8 +1,8 @@
 FROM alpine
 
 ARG REPO=bitly/oauth2_proxy
-ARG VERSION=2.2.0
-ARG BASE_NAME=oauth2_proxy-$VERSION.linux-amd64.go1.8.1
+ARG VERSION=2.2
+ARG BASE_NAME=oauth2_proxy-$VERSION.0.linux-amd64.go1.8.1
 ARG GITHUB_TOKEN=
 
 ADD Makefile /
